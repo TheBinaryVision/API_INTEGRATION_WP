@@ -66,3 +66,38 @@ async function getNews() {
   }
 }
 
+const flightApiKey = "2fdd386f6a95fbea28d92959477e5ad8"; // replace with your actual key
+
+async function getFlightStatus() {
+  const flightCode = document.getElementById("flightInput").value.trim();
+  const result = document.getElementById("flightResult");
+
+  if (!flightCode) {
+    result.innerHTML = "<p>Please enter a flight code.</p>";
+    return;
+  }
+
+  const url = `http://api.aviationstack.com/v1/flights?access_key=${flightApiKey}&flight_iata=${flightCode}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (!data.data || data.data.length === 0) {
+      result.innerHTML = `<p>No flight found for code "${flightCode}".</p>`;
+      return;
+    }
+
+    const flight = data.data[0];
+    result.innerHTML = `
+      <p><strong>Airline:</strong> ${flight.airline.name}</p>
+      <p><strong>Flight Number:</strong> ${flight.flight.iata}</p>
+      <p><strong>Status:</strong> ${flight.flight_status}</p>
+      <p><strong>Departure:</strong> ${flight.departure.airport} (${flight.departure.iata}) - ${flight.departure.scheduled}</p>
+      <p><strong>Arrival:</strong> ${flight.arrival.airport} (${flight.arrival.iata}) - ${flight.arrival.scheduled}</p>
+    `;
+  } catch (err) {
+    console.error(err);
+    result.innerHTML = `<p>Error fetching flight data.</p>`;
+  }
+}
