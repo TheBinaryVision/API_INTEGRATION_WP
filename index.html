@@ -3,36 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Weather & News Dashboard</title>
+  <title>Live Dashboard | Weather, Flights & News</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>🌦️ Weather & 📰 News Dashboard</h1>
+    <h1>🌤️ Live Dashboard</h1>
+    <p>Stay updated with real-time weather, flight status, and trending news</p>
   </header>
 
+  <section class="cover-section">
+    <div class="cover-overlay">
+      <h1><b>Welcome to the Live Dashboard</b></h1>
+      <p><b>Get real-time updates on Weather, Flights, and News</b></p>
+    </div>
+  </section>
+  
   <main class="container">
-    <section class="weather-section">
-      <h2>Weather Info</h2>
-      <input type="text" id="cityInput" placeholder="Enter city..." />
+    <section id="weather" class="weather-section">
+      <h2><span class="material-icons">cloud</span> Current Weather</h2>
+      <input type="text" id="cityInput" placeholder="Enter city (e.g., Mumbai)" />
       <button onclick="getWeather()">Get Weather</button>
       <div id="weatherResult"></div>
     </section>
+  </main>
 
-    <section class="news-section">
-      <h2>Top News</h2>
-      <button onclick="getNews()">Load News</button>
-      <div id="newsResult"></div>
-    </section>
-    
-    <section class="card">
-      <h2>✈️ Live Flight Status</h2>
+  <main class="container">
+    <section id="flight" class="flight-section">
+      <h2><span class="material-icons">flight_takeoff</span> Live Flight Status</h2>
       <input type="text" id="flightInput" placeholder="Enter Flight IATA Code (e.g., AI202)" />
       <button onclick="getFlightStatus()">Get Flight Status</button>
       <div id="flightResult"></div>
     </section>
-    
   </main>
+  
+  <main class="container">
+    <section id="news" class="news-section">
+      <h2><span class="material-icons">public</span> Week's Top News</h2>
+      <button onclick="getNews()">Load News</button>
+      <div id="newsResult"></div>
+    </section>
+  </main>
+
+  <!-- CONTACT SECTION -->
+  <main class="container">
+    <section class="contact-section" style="background: linear-gradient(to bottom right, #ede7f6, #ffffff); border-top: 5px solid #673ab7;">
+      <h2><span class="material-icons">contact_mail</span> Contact Me</h2>
+      <p>If you have any suggestions, questions or collaboration ideas, feel free to reach out!</p>
+      <p><strong>Email:</strong> 2021bcs155@sggs.ac.in</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naamroshan" target="_blank">Linkedin</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/TheBinaryVision" target="_blank">GitHub</a></p>
+    </section>
+  </main>
+
+  <!-- FOOTER WITH LINKS -->
+  <footer style="
+  background: linear-gradient(270deg, #2196f3, #d7f321, #42a5f5, #b60b60, #5909bb ); padding: 20px; color: rgb(24, 20, 20); text-align: center; border-radius: 12px;">
+    <div style="margin-bottom: 10px;">
+      🔗 Quick Links: <br><br>
+      <a href="#weather" style="color: #fff; margin: 0 10px;">1. Weather API</a><br> 
+      <a href="#flight" style="color: #fff; margin: 0 10px; text-decoration: bold;">2. Flight API</a> <br>
+      <a href="#news" style="color: #fff; margin: 0 10px; text-decoration: bold;">3. News API</a>
+    </div><br>
+    <p>Made with ❤️ by Roshan | © 2025</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

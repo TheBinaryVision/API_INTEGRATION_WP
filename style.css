@@ -1,95 +1,223 @@
+/* RESET & BASE */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  color: #333;
+  padding: 20px;
+}
+
+.cover-section {
+  position: relative;
+  height: 60vh;
+  background-image: url('img/cover1.jpg'); /* Replace 'cover.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(35, 5, 53);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 100px;
+  opacity: inherit;
+}
+
+.cover-overlay h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.cover-overlay p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(270deg, #2196f3, #d7f321, #42a5f5, #b60b60, #5909bb );
+  background-size: 600% 600%;
+  animation: gradientShift 10s ease infinite;
+  color: rgb(33, 3, 3);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* SECTION CARDS */
+section {
+  flex: 1 1 350px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-top: 5px solid transparent;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+.weather-section {
+  border-top-color: #00bcd4;
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+}
+
+.flight-section {
+  border-top-color: #4caf50;
+  background: linear-gradient(to bottom right, #e8f5e9, #ffffff);
+}
+
+.news-section {
+  border-top-color: #ff9800;
+  background: linear-gradient(to bottom right, #fff3e0, #ffffff);
+}
+
+/* TITLES WITH ICONS */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.material-icons {
+  font-size: 1.3rem;
+  color: #555;
+}
+
+/* INPUTS & BUTTONS */
+input[type="text"] {
+  padding: 12px;
+  margin-top: 10px;
+  width: 70%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 18px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+/* RESULTS BOX */
+#weatherResult, #flightResult, #newsResult {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #1976d2;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  min-height: 50px;
+}
+
+/* NEWS CARD STYLE */
+.news-card {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+}
+
+.news-card:last-child {
+  border-bottom: none;
+}
+
+.news-card h4 {
+  margin-bottom: 5px;
+}
+
+.news-card a {
   
-  body {
-    background: #f4f4f4;
-    color: #333;
-    padding: 20px;
-  }
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.news-card a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+  font-size: 0.9rem;
   
-  header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
   .container {
-    display: flex;
     flex-direction: column;
-    gap: 30px;
+    padding: 1rem;
   }
-  
-  section {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .weather-section, .news-section {
-    width: 100%;
-  }
-  
+
   input[type="text"] {
-    padding: 10px;
-    margin-top: 10px;
-    width: 70%;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
+
   button {
-    padding: 10px 15px;
-    margin-top: 10px;
-    margin-left: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    width: 100%;
+    margin-left: 0;
   }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  #weatherResult, #newsResult {
-    margin-top: 20px;
-  }
-  
-  .news-card {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
-  }
-  
-  .news-card:last-child {
-    border-bottom: none;
-  }
-  
-  .news-card h4 {
-    margin-bottom: 5px;
-  }
-  
-  .news-card a {
-    color: #007BFF;
-    text-decoration: none;
-  }
-  
-  .news-card a:hover {
-    text-decoration: underline;
-  }
-  
-  @media (min-width: 768px) {
-    .container {
-      flex-direction: row;
-    }
-  
-    .weather-section, .news-section {
-      width: 48%;
-    }
-  }
-  
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
