@@ -7,15 +7,18 @@
 }
 
 body {
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  background: linear-gradient(to right, #000000, #00001a, #00001e, #000010, #00001b, #000000);
+  animation: gradientShift 10s ease infinite;
   color: #333;
   padding: 20px;
 }
 
-.cover-section {
+/* Cover Section 1 */
+.cover-section-1 {
+  border-top-color: #c8d206;
   position: relative;
-  height: 60vh;
-  background-image: url('img/cover1.jpg'); /* Replace 'cover.jpg' with your image path */
+  height: 80vh;
+  background-image: url('img/cover2.jpg'); /* Replace 'cover.jpg' with your image path */
   background-size: cover;
   background-position: center;
   border-radius: 12px;
@@ -24,28 +27,108 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.cover-overlay {
+.cover-section-2 {
+  border-top-color: #1111a3;
+  position: relative;
+  height: 80vh;
+  background-image: url('img/cover1.jpg'); /* Replace 'cover.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+}.cover-section-3 {
+  border-top-color: #c40a58;
+  position: relative;
+  height: 80vh;
+  background-image: url('img/3.jpg'); /* Replace 'cover.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cover-overlay-1 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  color: rgb(35, 5, 53);
+  color: rgb(236, 240, 8);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   padding: 0 100px;
   opacity: inherit;
 }
 
-.cover-overlay h1 {
+.cover-overlay-1 h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 200px;
+  color: #f59c03;
 }
 
-.cover-overlay p {
+.cover-overlay-1 p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+.cover-overlay-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 0 100px;
+  opacity: inherit;
+}
+
+.cover-overlay-2 h1 {
+  font-size: 2.8rem;
+  margin-bottom: 200px;
+  color: #2c0113;
+}
+
+.cover-overlay-2 p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+.cover-overlay-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(8, 222, 29);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 0 100px;
+  opacity: inherit;
+}
+
+.cover-overlay-3 h1 {
+  font-size: 2.8rem;
+  margin-bottom: 200px;
+  color: #007BFF;
+}
+
+.cover-overlay-3 p {
   font-size: 1.2rem;
   max-width: 600px;
 }
@@ -54,7 +137,7 @@ body {
 header {
   text-align: center;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 5px;
   background: linear-gradient(270deg, #2196f3, #d7f321, #42a5f5, #b60b60, #5909bb );
   background-size: 600% 600%;
   animation: gradientShift 10s ease infinite;
@@ -99,17 +182,17 @@ section:hover {
 
 .weather-section {
   border-top-color: #00bcd4;
-  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  background: linear-gradient(to bottom right, #ffffff, #0981b5);
 }
 
 .flight-section {
   border-top-color: #4caf50;
-  background: linear-gradient(to bottom right, #e8f5e9, #ffffff);
+  background: linear-gradient(to bottom right, #ffffff, #06d741);
 }
 
 .news-section {
   border-top-color: #ff9800;
-  background: linear-gradient(to bottom right, #fff3e0, #ffffff);
+  background: linear-gradient(to bottom right, #ffffff, #e1b104);
 }
 
 /* TITLES WITH ICONS */
@@ -156,9 +239,9 @@ button:hover {
 
 /* RESULTS BOX */
 #weatherResult, #flightResult, #newsResult {
-  margin-top: 20px;
+  margin-top: 50px;
   background: #f9f9f9;
-  padding: 15px;
+  padding: 10px;
   border-left: 4px solid #1976d2;
   border-radius: 8px;
   font-size: 0.95rem;
